@@ -1,6 +1,13 @@
 let grid_container = document.querySelector('.grid-container');
 grid_container.addEventListener('mouseover', handleTrail);
 
+let special_brush = false;
+let toggle_brush = document.getElementById('toggle-brush');
+toggle_brush.addEventListener('click', () => {
+    special_brush = !special_brush;
+    toggle_brush.classList.toggle('special-brush');
+})
+
 createGrid(16);
 
 let resize_button = document.getElementById('resize-button');
@@ -29,5 +36,12 @@ function handleTrail(e) {
     let grid_element = e.target;
     if (grid_element == grid_container) return;
 
-    grid_element.style.backgroundColor = 'black';
+    grid_element.style.backgroundColor = special_brush ? generateRandomColor() : 'black';
+}
+
+function generateRandomColor() {
+    let random_color = Math.floor(16777215 * Math.random()).toString(16);
+    random_color = random_color.padStart(6, '0');
+    console.log(random_color);
+    return `#${random_color}`;
 }

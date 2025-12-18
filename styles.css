@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .grid-container {
@@ -21,3 +22,21 @@ body {
     background-color: white;
     border: 1px solid rgb(194, 194, 194);
 }
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+button {
+    font-size: 14px;
+    width: 150px;
+    line-height: 2;
+    border-radius: 1000px;
+}
+
+.special-brush {
+    background-image: linear-gradient(110deg, red, orange, yellow, green, blue, indigo, violet);
+}
+
