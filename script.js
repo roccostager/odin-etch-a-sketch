@@ -3,6 +3,14 @@ grid_container.addEventListener('mouseover', handleTrail);
 
 createGrid(16);
 
+let resize_button = document.getElementById('resize-button');
+resize_button.addEventListener('click', () => {
+    let input = parseInt(prompt("How big should the grid be?"));
+    if (!input || input > 100) return;
+
+    createGrid(input);
+});
+
 // Functions
 function createGrid(n) {
     grid_container.innerHTML = '';
